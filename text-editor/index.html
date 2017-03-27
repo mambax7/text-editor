@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Text Editor</title>
+    <link href="favicon.ico" rel="shortcut icon">
+
+    <link href="index.min.css" rel="stylesheet">
+    <link href="text-editor/ui/ui.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <header>
+      <h1>Text Editor</h1>
+      <p>A text selection range <abbr title="Application Programming Interface">API</abbr> written in pure JavaScript, for modern browsers.</p>
+      <p><a class="button" href="https://github.com/tovic/text-editor/archive/master.zip"><i class="icon icon-download"></i> Download</a> <a class="button" href="text-editor"><i class="icon icon-flask"></i> Documentation</a></p>
+      <section>
+        <p><textarea class="textarea" id="editor">Yay! Finally, a documentation page!</textarea></p>
+        <p id="text-editor-shell-selector" data-shell-path="text-editor/ui/ui"></p>
+      </section>
+    </header>
+
+    <section>
+      <h2 id="section:feature">Features</h2>
+      <ul>
+        <li>Light&ndash;weight. No dependencies. <strong>Text Editor</strong> uses plain JavaScript language.</li>
+        <li>Powerful <abbr title="Application Programming Interface">API</abbr>. Easy to learn.</li>
+        <li>Extensible &rarr; <a href="#section:extend">check it out</a></li>
+        <li>No hack. No feature detection. Optimized for modern browsers with their built&ndash;in JavaScript features.</li>
+        <li>Make your own. The <a href="text-editor">core</a> functionality is enough to help you making your own text editor.</li>
+      </ul>
+      <h2 id="section:start">Start</h2>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html dir="ltr"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Text Editor&lt;/title&gt;
+    &lt;link href="text-editor/ui/ui.min.css" rel="stylesheet"&gt;
+    &lt;link href="text-editor/ui/ui.i.min.css" rel="stylesheet"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;&lt;textarea id="editor"&gt;&lt;/textarea&gt;&lt;/p&gt;
+    &lt;script src="text-editor.min.js"&gt;&lt;/script&gt;
+    &lt;script src="text-editor/ui/ui.min.js"&gt;&lt;/script&gt;
+    &lt;script src="text-editor/ui/html/html.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+    var editor = TE.ui.HTML(document.querySelector('#editor'));
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      <h2 id="section:extend">Extend</h2>
+      <p>Modules:</p>
+      <ul>
+        <li><a href="text-editor/ui">User Interface</a></li>
+      </ul>
+      <p>These are plugins for user interface module:</p>
+      <ul>
+        <li><a href="text-editor/ui/html"><abbr title="Hyper Text Markup Language">HTML</abbr> Text Editor</a></li>
+        <li><a href="text-editor/ui/markdown">Markdown Text Editor</a> &larr; depends on <code>TE.ui.HTML()</code> plugin</li>
+        <li><a href="text-editor/ui/textile">Textile Text Editor</a> &larr; depends on <code>TE.ui.HTML()</code> plugin</li>
+        <li><a href="text-editor/ui/bbcode">BBCode Text Editor</a> &larr; depends on <code>TE.ui.HTML()</code> plugin</li>
+      </ul>
+      <p>Miscellaneous:</p>
+      <ul>
+        <li><a href="text-editor/ui/ui/language">Editor Internationalization</a></li>
+        <li><a href="text-editor/ui/ui/expand">Editor Maximize/Minimize</a></li>
+        <li><a href="text-editor/ui/ui/table-grid">Table Grid Selector</a></li>
+        <li><a href="text-editor/ui/ui/converter">Common String Converters</a></li>
+        <li><a href="text-editor/ui/ui/emoji">Native Emoji</a></li>
+        <li><a href="text-editor/ui/ui/bubble-tools">Bubble Tools</a></li>
+        <li><a href="text-editor/ui/ui/grow">Editor Grow</a></li>
+        <li>Auto&ndash;Complete</li>
+        <li><a href="text-editor/ui/ui/auto-complete-html"><abbr title="Hyper Text Markup Language">HTML</abbr> Auto&ndash;Complete</a></li>
+        <li><a href="text-editor/ui/ui/word-counter">Word Counter</a></li>
+        <li><abbr title="Hyper Text Markup Language">HTML</abbr> Preview</li>
+        <li><a href="text-editor/ui/ui/help">Help Panel</a></li>
+        <li><a href="text-editor/ui/ui/find-replace">Find and Replace</a></li>
+        <li><a href="text-editor/ui/ui/special-characters">Special Characters</a></li>
+      </ul>
+      <h2 id="section:support">Support</h2>
+      <p>This text editor project was initially cultivated to support the <a href="https://github.com/mecha-cms">Mecha <abbr title="Content Management System">CMS</abbr></a> project that is currently being inactive for a while. But now, this project becomes an individual project; makes it possible to be extended into any other projects. Your small donation will keep this project going and allow me to do any further development.</p>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input name="cmd" value="_s-xclick" type="hidden">
+        <input name="hosted_button_id" value="TNVGH7NQ7E4EU" type="hidden">
+        <p><button type="submit" class="button"><i class="icon icon-paypal"></i> Donate</button></p>
+      </form>
+    </section>
+
+    <footer>
+      <span class="left">&copy; 2016 &middot; Made with <i class="icon icon-ambulance" onmouseover="this.className='icon icon-heart';" ontouchstart="this.className='icon icon-heart';"></i> by <a href="">Taufik Nurrohman</a></span>
+      <span class="right"><a href="https://github.com/tovic/text-editor"><i class="icon icon-github"></i> GitHub</a></span>
+    </footer>
+
+    <script src="text-editor.min.js"></script>
+    <script src="text-editor/ui/ui.min.js"></script>
+    <script src="text-editor/ui/html/html.min.js"></script>
+    <script>
+    var editor = TE.ui.HTML(document.querySelector('#editor'));
+    </script>
+    <script src="text-editor/ui/ui/word-counter/word-counter.min.js"></script>
+
+    <script src="index.min.js"></script>
+
+  </body>
+</html>
